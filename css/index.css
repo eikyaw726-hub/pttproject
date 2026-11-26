@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --info-color: #3498db;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --accent-color: #f39c12;
+
+}
+
+* {
+    box-sizing: border-box;
+    /* 
+    padding: 0;
+    margin: 0; */
+}
+
+body {
+
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    background-color: #f9f9f9f9;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 3px;
+}
+
+
+/* <!-- back to top button --> */
+.back-to-tops {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+
+
+    transition: all .3s ease;
+
+    z-index: 999;
+}
+
+.back-to-tops:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.back-to-tops.active {
+    opacity: 0.5;
+    visibility: visible;
+}
+
+/*  end Back to top button*/
+
+
+
+/* <!-- start header section --> */
+
+/* <!-- start navbar --> */
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+
+    transition: all .3s ease;
+
+}
+
+.navbar.scrolleds {
+    background-color: rgba(44, 62, 80, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 5px 0;
+}
+
+.navbar-brand img {
+    transition: transform .5s linear;
+
+}
+
+.navbar-brand img:hover {
+    transform: rotate(60deg);
+}
+
+.nav-link {
+    color: rgba(225, 225, 225, 0.8);
+    margin: 0px 10px;
+    transition: color 0.3s ease;
+
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-link::after {
+    content: "";
+
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+
+}
+
+.dropdown-item {
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+
+
+/* <!-- end navbar  --> */
+
+/* <!-- start banner --> */
+.banners {
+    height: 100vh;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+
+    position: relative;
+}
+
+.banner-contents {
+    color: #ffffff;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.banner-contents h1 {
+    font-weight: 3rem;
+}
+
+.banner-contents h2 {
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.banner-contents p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.banner-contents .btn-warning {
+    background-color: var(--accent-color);
+    border: none;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.banner-contents .btn-warning:hover {
+    background-color: rgb(255, 99, 14);
+    box-shadow: 0 7px 20px rgba(225, 139, 28, 0.5);
+    transform: rotateY('-3px');
+
+}
+
+/* <!-- end banner --> */
+
+/* <!-- end header section --> */
+
+
+
+
+/* <!-- start client section --> */
+section {
+    padding: 80px 0;
+}
+
+.sectiontitles {
+    text-align: center;
+    margin-bottom: 50px;
+
+
+}
+
+.sectiontitles h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+
+    position: relative;
+}
+
+.sectiontitles h2::after {
+    content: "";
+
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+
+    position: absolute;
+    left: 50%;
+    bottom: -15%;
+
+    transform: translateX(-50%);
+}
+
+.sectiontitles p {
+    color: #777;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* start card style */
+.card {
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+
+    font-weight: 600;
+    font-size: 20px;
+    /* margin-bottom: 15px; */
+
+}
+
+.card-subtitle {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.cardtitles {
+    text-align: center;
+}
+
+.cardtitles h3 {
+    font-size: 1.45rem;
+    letter-spacing: 1.6px;
+}
+
+.cardtitles .btn {
+    background-color: #f9f9f9f9;
+
+    border: none;
+    border-radius: 25px;
+
+    margin-left: 10px;
+}
+
+.cardtitles .btn:hover {
+    background-color: var(--info-color);
+    color: #ffffff;
+}
+
+/* end card style */
+
+/* <!-- end client section --> */
+
+
+
+/* <!-- start software section --> */
+.softwares img {
+    width: 100%;
+}
+
+/* <!-- end software section --> */
+
+
+
+
+/* <!-- start team section --> */
+
+.teams img {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+}
+
+/* <!-- end team section --> */
+
+
+
+
+/* <!-- start public section --> */
+.progresses h5 {
+    letter-spacing: 1px;
+}
+
+.progress {
+    height: 10px;
+    background-color: #f5f5f5f5;
+}
+
+.progress-bar {
+    border-radius: 5px;
+}
+
+/* <!-- end public section --> */
+
+
+
+
+/* <!-- start pricing section --> */
+.pricingcards {
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+    transition: all .3s ease;
+}
+
+.pricingcards:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+.pricingcards .pricingcards-header {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    padding: 25px;
+}
+
+.pricingcards-header h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.pricingcards-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+
+}
+
+.pricingcards-header h1 span {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.pricingcards-footer {
+    background-color: #f9f9f9f9;
+    padding: 20px;
+}
+
+/* <!-- end pricing section --> */
+
+
+
+
+/* <!-- start contact section --> */
+
+/* start map */
+.map-containers iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* end map */
+
+
+.contact .card-header h5 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding-top: 10px;
+}
+
+/* <!-- end contact section --> */
+
+.contact .card-footer {
+    background-color: transparent;
+    border: none;
+    padding-bottom: 20px;
+}
+
+
+
+/* <!-- start footer section --> */
+footer h5 {
+    letter-spacing: 1px;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+/* <!-- end footer section --> */
+
+
+
+
+/* <!-- start modal box --> */
+.modal-header {
+    border: none;
+    background: linear-gradient(45deg, var(--primary-color), var(--dark-color));
+}
+
+.modal-body {
+    border: none;
+    padding: 30px;
+}
+
+.modal-footer {
+    border: none;
+    background-color: #f9f9f9f9;
+}
+
+/* <!-- end modal box --> */
+
+
+/* Responseve Adjustements */
+@media(max-width:576px) {
+
+    .banners {
+        height: auto;
+        min-height: 75vh;
+        padding: 120px 0 80px 0;
+    }
+
+    .banner-contents h1 {
+        font-weight: 1.8rem;
+    }
+
+    .banner-contents h2 {
+        font-size: 1.5rem;
+
+    }
+
+    .banner-contents p {
+        font-size: 1rem;
+
+    }
+
+    .banner-contents .btn {
+        width: 100%;
+    }
+}
+
+@media(max-width:768px) {
+    .banners {
+        height: auto;
+        min-height: 75vh;
+        padding: 120px 0 80px 0;
+    }
+
+    .banner-contents h1 {
+        font-weight: 2rem;
+    }
+
+    .banner-contents h2 {
+        font-weight: 100;
+
+    }
+
+    .banner-contents p {
+        font-size: 1rem;
+
+    }
+
+}
+
+/* End Responseve Adjustements */
+
+/* start Animation for banner */
+@keyframes fadeup {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animates {
+    animation: fadeup 0.8s ease forwards;
+}
+
+.display-1 {
+    animation-delay: 0.2s;
+}
+
+.display-2 {
+    animation-delay: 0.4s;
+}
+
+.display-3 {
+    animation-delay: 0.6s;
+}
+
+/* End Animation for banner */
+
+
+/* .source-sans-3-<uniquifier> {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
